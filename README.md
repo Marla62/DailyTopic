@@ -7,9 +7,17 @@
     <style>
 
     </style>
+    解1：
     定位 top:50%;left:50%;
     margin-top:-长度的一半
     margin-left:-宽度的一半
+    解2：
+    利用flex布局 实现子元素快速居中
+    <div class='father' style="display:flex;align-items:center;justfly-count:center">
+        <div class='son'>
+        
+        </div>
+    </div>
     ```   
 2. `<img>`的title和alt有什么区别.  
 title是鼠标放到图片上时显示的文字
