@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>步进器</title>
+</head>
+<style>
+    #less,#add {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    #num{
+        font-size: 60px;
+    }
+</style>
+<body>
+    <div style="display: flex;">
+        <div id="less" onclick="less()"></div>
+        <div style="width: 100px;height: 100px;display: flex;align-items: center;">
+            <p id="num">0</p>
+        </div>
+        <div id="add" onclick="add()"></div>
+    </div>
+
+</body>
+<script>
+    let num = document.querySelector("#num"); //获取dom节点
+    //获取当前数量
+    function getNum(){
+        return Number(num.innerHTML);
+    }
+    function updateNum({quantity}) {
+        num.innerHTML = quantity;
+    }
+    //减号
+    function less(){
+        let quantity = this.getNum() - 1;
+        this.updateNum({quantity});
+    }
+    //加号
+    function add(){
+        let quantity = this.getNum() + 1;
+        this.updateNum({quantity});
+    }
+</script>
+</html>
