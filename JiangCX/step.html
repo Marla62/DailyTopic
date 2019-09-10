@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>步进器</title>
-</head>
-<style>
-    #less,#add {
-        width: 100px;
-        height: 100px;
-        background: red;
+  </head>
+  <style>
+    #less,
+    #add {
+      width: 100px;
+      height: 100px;
+      background: red;
     }
-    #num{
-        font-size: 60px;
+    #num {
+      font-size: 60px;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div style="display: flex;">
-        <div id="less" onclick="changeNum(false)"></div>
-        <div style="width: 100px;height: 100px;display: flex;align-items: center;">
-            <p id="num">0</p>
-        </div>
-        <div id="add" onclick="changeNum(true)"></div>
+      <div id="less" onclick="changeNum(false)"></div>
+      <div
+        style="width: 100px;height: 100px;display: flex;align-items: center;"
+      >
+        <p id="num">0</p>
+      </div>
+      <div id="add" onclick="changeNum(true)"></div>
     </div>
-
-</body>
-<script>
+  </body>
+  <script>
     let num = document.querySelector("#num"); //获取dom节点
     //获取当前数量
-    function getNum(){
-        return Number(num.innerHTML);
+    function getNum() {
+      return Number(num.innerHTML);
     }
     //页面回显
-    function updateNum({quantity}) {
-        num.innerHTML = quantity;
+    function updateNum({ quantity }) {
+      num.innerHTML = quantity;
     }
     // //减号
     // function less(){
@@ -47,9 +49,10 @@
     //     this.updateNum({quantity});
     // }
     //加减号
-    function changeNum(flag){
-        let quantity = this.getNum() + flag * 1;
-        this.updateNum({quantity});
+    function changeNum(flag) {
+      let tmpNum = flag? 1: -1;
+      let quantity = this.getNum() + tmpNum;
+      this.updateNum({ quantity });
     }
-</script>
+  </script>
 </html>
