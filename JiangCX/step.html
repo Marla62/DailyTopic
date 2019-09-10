@@ -18,11 +18,11 @@
 </style>
 <body>
     <div style="display: flex;">
-        <div id="less" onclick="less()"></div>
+        <div id="less" onclick="changeNum(false)"></div>
         <div style="width: 100px;height: 100px;display: flex;align-items: center;">
             <p id="num">0</p>
         </div>
-        <div id="add" onclick="add()"></div>
+        <div id="add" onclick="changeNum(true)"></div>
     </div>
 
 </body>
@@ -32,17 +32,23 @@
     function getNum(){
         return Number(num.innerHTML);
     }
+    //页面回显
     function updateNum({quantity}) {
         num.innerHTML = quantity;
     }
-    //减号
-    function less(){
-        let quantity = this.getNum() - 1;
-        this.updateNum({quantity});
-    }
-    //加号
-    function add(){
-        let quantity = this.getNum() + 1;
+    // //减号
+    // function less(){
+    //     let quantity = this.getNum() - 1;
+    //     this.updateNum({quantity});
+    // }
+    // //加号
+    // function add(){
+    //     let quantity = this.getNum() + 1;
+    //     this.updateNum({quantity});
+    // }
+    //加减号
+    function changeNum(flag){
+        let quantity = this.getNum() + flag * 1;
         this.updateNum({quantity});
     }
 </script>
