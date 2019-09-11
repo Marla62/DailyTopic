@@ -36,7 +36,15 @@
     null是个空对象,可以作为原型链的终点.
     代码在`./JiangCX/prototype.js`
 
-
+6.vue生命周期及其用法
+1，beforeCreate：创建vue实例之前的钩子函数
+2，created：实例创建完成之后的钩子函数
+3，beforeMount：开始挂载编译生成的HTML到对应位置时触发的钩子函数
+4，mounted：将编译好的HTML挂载到页面上完成之后执行的钩子函数
+5，beforeUpdate：将编译好的html替换el属性所指向的dom对象或替换对应html标签里面的内容
+6，updated：监听data数据变化随时更新dom
+7，beforeDestroy：实例销毁之前执行的钩子函数
+8，destroyed：实例销毁执行的钩子函数
 
 
 
