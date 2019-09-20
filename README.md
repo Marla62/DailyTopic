@@ -83,7 +83,7 @@
     缺点：await 将异步代码改造成同步代码，如果多个异步操作没有依赖性而使用 await 会导致性能上的降低。
 
 12.两个数组合并为一个数组
-```<script>
+```javascript
      var a1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'] 
      var a2 = ['A', 'B', 'C', 'D']
      var j=-1;
@@ -95,38 +95,21 @@
            }
        }
      console.log(arr)
-  </script>```
-实操题:
-1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可
-   ```html
-   <!-- 写到此代码块即可 -->
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-   	<meta charset="UTF-8">
-   	<title>Document</title>
-   </head>
-   <body>
-   	<div>
-   		<button class="jia">+</button>
-   		<input value="0">
-   		<button class="jian">-</button>
-   	</div>
-   </body>
-   </html>
-   <script>
-   var jia=document.getElementsByClassName('jia')[0]
-   var jian=document.getElementsByClassName('jian')[0]
-   var val=document.getElementsByTagName('input')[0]
-   var num=0
-   jia.onclick=function () {
-   	num++
-   	val.value=num
-   }
+```  
 
-jian.onclick=function () {
-num--
-val.value=num
-}
-</script>
-```
+13. Vue实现数据双向绑定的原理  
+  
+
+
+14. HTML 块元素，行内元素，行内块分别有哪些？请列举  
+
+
+
+
+15. 说一下什么是 雪碧图（CSSsprite）  
+
+
+
+实操题:
+1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
+
