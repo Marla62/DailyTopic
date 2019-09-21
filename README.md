@@ -98,17 +98,21 @@
 ```  
 
 13. Vue实现数据双向绑定的原理  
-  
+  vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方式来实现的。
+  vue是通过Object.defineProperty()来实现数据劫持的。
+  通过Object.defineProperty( )对属性设置一个set函数，当数据改变了就会来触发这个函数，所以我们只要将一些需要更新的方法放在这里面就可以实现data更新view了
 
 
 14. HTML 块元素，行内元素，行内块分别有哪些？请列举  
+块级元素：div、p、h1-h6，ul，li,hr
 
-
-
+行内元素：a b small em i img span sub sup u
 
 15. 说一下什么是 雪碧图（CSSsprite）  
+把多个图合并到一个图片文件，通过css控制输出
 
-
+16.JavaScript 变量类型有几种，分别是什么。
+JavaScript 中值的类型共有八种：Number,String,Symbol,BigInt,Boolean,Undefined,Null,Object。
 
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
