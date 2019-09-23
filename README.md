@@ -114,6 +114,9 @@
 16.JavaScript 变量类型有几种，分别是什么。
 JavaScript 中值的类型共有八种：Number,String,Symbol,BigInt,Boolean,Undefined,Null,Object。
 
+17.写React / Vue 项目中，组件为什么要用key，其作用是什么？
+在开发过程中我们要保证某个元素的key在其同级元素中具有唯一性。在Diff算法中，会借助元素的key值来判断该元素是是最新创建的还是移动过来的，从而减少不必要的元素渲染。
+
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
