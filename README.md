@@ -95,7 +95,7 @@
            }
        }
      console.log(arr)
-```  
+```    
 
 13. Vue实现数据双向绑定的原理  
   vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方式来实现的。
@@ -131,6 +131,13 @@ JavaScript 中值的类型共有八种：Number,String,Symbol,BigInt,Boolean,Und
 
     (2)，如果修改了，Vue 是如何监控到属性的修改并给出警告的？
         在initprops时，在defineReactive时通过判断是否在开发环境，如果在开发环境，会在触动set的时候判断是否此key处于updatingChildren中被修改，如果不是，说明此修改来自子组件，会触发warning提示。
+20. 什么是相对路径?什么是绝对路径? 小程序的根目录从哪里开始?vue的根目录从哪里开始?
+
+
+
+
+
+
 
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
