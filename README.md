@@ -114,10 +114,11 @@
 16.JavaScript 变量类型有几种，分别是什么。
 JavaScript 中值的类型共有八种：Number,String,Symbol,BigInt,Boolean,Undefined,Null,Object。
 
-17.写React / Vue 项目中，组件为什么要用key，其作用是什么？
+17. 写React / Vue 项目中，组件为什么要用key，其作用是什么？
+
 在开发过程中我们要保证某个元素的key在其同级元素中具有唯一性。在Diff算法中，会借助元素的key值来判断该元素是是最新创建的还是移动过来的，从而减少不必要的元素渲染。
 
-18.对Proxy的理解
+18. 对Proxy的理解
     在对目标对象的操作之前先拦截，对外界对象操作进行过滤和修改的默认行为，可以不直接的操作对象，而是通过对象的代理对象间接的操作对象。
     let proxy = new Proxy(target, handler)
     target是Proxy包装的目标对象（可以是任何类型的对象，包括原生数组，函数）
@@ -126,11 +127,23 @@ JavaScript 中值的类型共有八种：Number,String,Symbol,BigInt,Boolean,Und
     注：handle可以为{}，但是不能为null，否则会报错
 
 
-19.(1),在 Vue 中，子组件为什么不可以修改父组件传递的 Prop？
+19. (1)在 Vue 中，子组件为什么不可以修改父组件传递的 Prop？
+
         因为当父组件属性被修改时，该值就会被覆盖，如果有不同的变化，可以基于props和computed
 
-    (2)，如果修改了，Vue 是如何监控到属性的修改并给出警告的？
+    (2)如果修改了，Vue 是如何监控到属性的修改并给出警告的？
+
         在initprops时，在defineReactive时通过判断是否在开发环境，如果在开发环境，会在触动set的时候判断是否此key处于updatingChildren中被修改，如果不是，说明此修改来自子组件，会触发warning提示。
+
+20. 小程序的根目录在哪里?  
+
+    1. ./ 表示当前目录 ../ 表示上级目录 此外pages前需/开头（刚路径问题帖子看到的）
+    2. 小程序不知处根目录. utils和images和pages同级，但是用 / 却不是从根目录开始寻找，而是在当前页面下目录。即不支持根目录/
+    3. 在js中使用import引入图片时不能通过根目录进行查找，而wxml则没有这种限制
+    4. 每个小程序项目的根目录会有一个project.config.json的项目配置文件，可以设置miniprogramRoot属性指定小程序源码的目录, 默认为根目录(/)。
+
+21. 什么是绝对路径?什么是相对路径?
+
 
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
