@@ -276,6 +276,21 @@ let a = 2;
     3，关键字分析和选择是SEO重要工作之一。
     4，了解主要的搜索引擎。
 
+ 43.html常见兼容性问题
+    1，双边距BUG float引起的  使用display
+    2，3像素问题 使用float引起的 使用dislpay:inline -3px  
+    3，超链接hover 点击后失效  使用正确的书写顺序 link visited hover active
+    4，Ie z-index问题 给父级添加position:relative
+    5，Png 透明 使用js代码 改
+    6，Min-height 最小高度 ！Important 解决’
+    7，select 在ie6下遮盖 使用iframe嵌套
+    8，为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px）
+
+ 44.看下列代码输出为何？解释原因
+    var a;
+    alert(typeof a); // undefined
+    alert(b); // 报错
+    原因：undefind是一个只有一个值的数据类型，这个值就是"undefind"，在使用var声明变量，但并未对其赋值进行初始化时，这个变量的值就是undefind，而b由于未声明而报错。
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
