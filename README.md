@@ -47,11 +47,14 @@
     6，updated：监听data数据变化随时更新dom
     7，beforeDestroy：实例销毁之前执行的钩子函数
     8，destroyed：实例销毁执行的钩子函数.
+
 7. 列举下你知道的代码规范：
     1，写干净整洁的代码，请尊重空间，请尊重人眼的偏好
     2，高效运用注释
+
 8. 熟悉w3c标准，w3c标准是什么？
     标准 标签字母小写 标签闭合 嵌套正确 外部链接 css 和 js
+
 9. js实现继承的方式
     1. 原型链继承 2. 构造函数继承 3. 组合继承 4. 关联继承 (其中一项是错误的,请选出)
     关联继承是错误的，
@@ -299,16 +302,30 @@ let a = 2;
     1，服务器端路由：的功能是根据URL地址，跳转到相应页面，这些页面都是真实存在于服务端的。
     2，前端路由：由前端实现以上功能，前端只存在d单页面首页index.htm。
 
- 47.介绍几种水平垂直居中的方法。
- 48.加法运算如何处理小数点后面的位数。
- 49.Flex布局
- 50.数组去重的方式（思路）
- 51.vue循环中key的作用。
- 52.将对象字符串如何处理成对象，以及对象转换成字符串。
- 53.vue数据处理方式。
- 54.写一下This的理解。
- 55.写一下你对页面或者网站性能优化。
- 56.写出几种碰到的浏览器兼容问题。
+ 47.将"10000000000"形式的字符串，以每三位进行分隔展示"10.000.000.000"
+        ``var num=10000000000
+        var string = num.toString();
+        var arr = string.split('').reverse();
+        console.log(arr);
+        var obj =[];
+        for(var i=0;i<arr.length;i++){
+            if(i%3 ===0 && i!==0){
+            obj.push(',');
+            }
+            obj.push(arr[i]);
+        }
+        obj.reverse()
+        console.log(obj);
+        console.log(obj.join(""));``
+
+ 48.react生命周期
+    1，componentWillMount 在渲染前调用,在客户端也在服务端。
+    2，componentDidMount : 在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。
+    3，componentWillReceiveProps 在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。
+    4，shouldComponentUpdate 返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。
+    5，componentWillUpdate在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。
+    6，componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。
+    7，componentWillUnmount在组件从 DOM 中移除之前立刻被调用。
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
