@@ -326,6 +326,23 @@ let a = 2;
     5，componentWillUpdate在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。
     6，componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。
     7，componentWillUnmount在组件从 DOM 中移除之前立刻被调用。
+
+ 49.ES6中的class和ES5的类有什么区别？
+    1,ES6 class 内部所有定义的方法都是不可枚举的;
+    2,ES6 class 必须使用 new 调用;
+    3,ES6 class 不存在变量提升;
+    4,ES6 class 默认即是严格模式;
+    5,ES6 class 子类必须在父类的构造函数中调用super()，这样才有this对象;ES5中类继承的关系是相反的，先有子类的this，然后用父类的方法应用在this上。
+
+ 50. 如何正确的判断this? 箭头函数的this是什么？
+    this的绑定规则有四种：默认绑定，隐式绑定，显式绑定，new绑定.
+    1，函数是否在 new 中调用(new绑定)，如果是，那么 this 绑定的是新创建的对象。
+    2，函数是否通过 call,apply 调用，或者使用了 bind (即硬绑定)，如果是，那么this绑定的就是指定的对象。
+    3，函数是否在某个上下文对象中调用(隐式绑定)，如果是的话，this 绑定的是那个上下文对象。一般是 obj.foo()
+    4，如果以上都不是，那么使用默认绑定。如果在严格模式下，则绑定到 undefined，否则绑定到全局对象。
+    5，如果把 null 或者 undefined 作为 this 的绑定对象传入 call、apply 或者 bind, 这些值在调用时会被忽略，实际应用的是默认绑定规则。
+    6，箭头函数没有自己的 this, 它的this继承于上一层代码块的this。
+
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
