@@ -343,6 +343,15 @@ let a = 2;
     5，如果把 null 或者 undefined 作为 this 的绑定对象传入 call、apply 或者 bind, 这些值在调用时会被忽略，实际应用的是默认绑定规则。
     6，箭头函数没有自己的 this, 它的this继承于上一层代码块的this。
 
+ 51.call 和 apply 的区别是什么，哪个性能更好一些？
+    1，Function.prototype.apply和Function.prototype.call 的作用是一样的，区别在于传入参数的不同；
+    2，第一个参数都是，指定函数体内this的指向；
+    3，第二个参数开始不同，apply是传入带下标的集合，数组或者类数组，apply把它传给函数作为参数，call从第二个开始传入的参数是不固定的，都会传给函数作为参数。
+    4，call比apply的性能要好，平常可以多用call, call传入参数的格式正是内部所需要的格式。
+
+ 52.为什么普通 for 循环的性能远远高于 forEach 的性能？
+    1，for 循环没有任何额外的函数调用栈和上下文；
+    2，forEach函数签名实际上是array.forEach(function(currentValue, index, arr), thisValue)它不是普通的 for 循环的语法糖，还有诸多参数和上下文需要在执行的时候考虑进来，这里可能拖慢性能
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
