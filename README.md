@@ -352,6 +352,16 @@ let a = 2;
  52.为什么普通 for 循环的性能远远高于 forEach 的性能？
     1，for 循环没有任何额外的函数调用栈和上下文；
     2，forEach函数签名实际上是array.forEach(function(currentValue, index, arr), thisValue)它不是普通的 for 循环的语法糖，还有诸多参数和上下文需要在执行的时候考虑进来，这里可能拖慢性能
+
+ 53.javascript的本地对象，内置对象和宿主对象
+    本地对象为array obj regexp等可以new实例化
+    内置对象为gload Math 等不可以实例化的
+    宿主为浏览器自带的document,window 等
+
+ 54.window.onload 和document.ready的区别
+    1，引入js文件的两种方式：一种原生的 一种是jQuery库的入口函数window.onload 是在dom文档树加载完和所有文件加载完之后执行一个函数Document.ready原生种没有这个方法，jquery中有 $(document).ready(function(){代码}),在dom文档树加载完之后执行一个函数（注意，这里面的文档树加载完不代表全部文件加载完）。
+    2，$(document).ready要比window.onload先执行，执行的上下文不同，
+    3，window.onload只能出来一次，$(document).ready可以出现多次
 实操题:
 1. 实现一个简单的计数器. 加减号点击数量能跟着变 即可 代码play下的test.html
 
