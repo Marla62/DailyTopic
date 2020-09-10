@@ -26,14 +26,21 @@ function _isObject(params) {
 
 
 
-function clone(target) {
+function clone(target, map = new Map()) {
   // 是否对象
   if(typeof target === 'object'){
+    // 用一个新Map对象存储循环引用的对象
+    let mapResult = map.get(target);
+    if(mapResult) {
+      return mapResult;
+    } 
     // 是否数组
     let cloneObject = _isArray(target)? [] : {};
+    map.set(target, cloneObject);
     for (const key in target) {
       if (target.hasOwnProperty(key)) {
-        const element = clone(target[key]);
+        // 将更新过的Map对象继续传入
+        const element = clone(target[key], map);
         cloneObject[key] = element;
       }
     }
