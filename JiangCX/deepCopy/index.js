@@ -16,15 +16,10 @@ function _isArray(params) {
  * 判断是否对象
  * @param {*} params 
  */
-function _isObject(params) {
-  // 非null
-  // 不是数组 
-  // TODO::不是function 
-  // 是对象
- return params !== undefined || params !== null && !(params instanceof Array) &&  params instanceof Object; 
+function _isObject(target) {
+  const type = typeof target;
+  return target !== null && (type === 'object' || type === 'function');
 }
-
-
 
 function clone(target, map = new Map()) {
   // 是否对象
